@@ -1049,6 +1049,311 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   margin-right: 6px;
 }
 
+/* ═══════════ PANEL SZCZEGÓŁÓW USŁUGI ═══════════ */
+.svmodal {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-out), visibility 0.3s;
+}
+.svmodal.is-open { visibility: visible; opacity: 1; }
+
+.svmodal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 8, 10, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.svmodal__panel {
+  position: relative;
+  width: min(100%, 640px);
+  max-height: min(88vh, 820px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transform: translateY(24px) scale(0.98);
+  transition: transform 0.35s var(--ease-out);
+}
+.svmodal.is-open .svmodal__panel { transform: translateY(0) scale(1); }
+
+.svmodal__scroll {
+  height: 100%;
+  max-height: min(88vh, 820px);
+  overflow-y: auto;
+  padding: clamp(28px, 5vw, 48px);
+}
+
+.svmodal__close {
+  position: absolute;
+  top: 16px; right: 16px;
+  z-index: 2;
+  width: 44px; height: 44px;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text);
+  transition: background var(--dur), border-color var(--dur), transform var(--dur) var(--ease-out);
+}
+.svmodal__close:hover { background: var(--red); border-color: var(--red); transform: rotate(90deg); }
+
+.svmodal__title {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  text-transform: uppercase;
+  line-height: 1.08;
+  margin-bottom: 16px;
+}
+
+.svmodal__lead { color: var(--text-dim); max-width: 60ch; margin-bottom: 32px; }
+
+.svmodal__why {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 28px;
+  align-items: start;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+.svmodal__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  aspect-ratio: 1;
+  border: 1.5px solid var(--red);
+  border-radius: 50%;
+  text-align: center;
+  padding: 10px;
+}
+.svmodal__badge span {
+  font-family: var(--font-head);
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+}
+.svmodal__badge b {
+  font-family: var(--font-head);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--red);
+  line-height: 1;
+}
+.svmodal__whytext h3 {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 14px;
+}
+.svmodal__list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.svmodal__list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+}
+.svmodal__list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.5em;
+  width: 14px; height: 8px;
+  border-left: 2px solid var(--red);
+  border-bottom: 2px solid var(--red);
+  transform: rotate(-45deg);
+}
+
+.svmodal__block { margin-bottom: 28px; }
+.svmodal__block h3 {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+.svmodal__block p { color: var(--text-dim); }
+
+.svmodal__meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+.svmodal__meta > div:first-child { border-right: 1px solid var(--border); padding-right: 16px; }
+.svmodal__meta span {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+.svmodal__meta b {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--red);
+}
+.svmodal__meta small { color: var(--text-dim); font-size: 0.76rem; }
+
+.svmodal__steps { list-style: none; counter-reset: sv; display: flex; flex-direction: column; gap: 18px; }
+.svmodal__steps li {
+  counter-increment: sv;
+  position: relative;
+  padding-left: 40px;
+}
+.svmodal__steps li::before {
+  content: counter(sv);
+  position: absolute;
+  left: 0; top: 0;
+  width: 28px; height: 28px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--red);
+  border: 1.5px solid var(--red);
+  border-radius: 50%;
+}
+.svmodal__steps b { display: block; font-family: var(--font-head); font-size: 0.95rem; text-transform: uppercase; margin-bottom: 4px; }
+.svmodal__steps p { color: var(--text-dim); font-size: 0.92rem; }
+
+/* ─── Pakiety (PPF) + diagram auta ─── */
+.svpkg { margin-bottom: 28px; }
+.svpkg > h3 {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 14px;
+}
+.svpkg__tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.svpkg__tab {
+  padding: 10px 18px;
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  color: var(--text-dim);
+  min-height: 40px;
+  transition: all var(--dur) var(--ease-out);
+}
+.svpkg__tab:hover { border-color: rgba(255,255,255,0.35); color: var(--text); }
+.svpkg__tab.is-active { background: var(--red); border-color: var(--red); color: #fff; }
+
+.svpkg__grid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+.svcar { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.svcar svg { width: 100%; max-width: 180px; height: auto; }
+.svcar__base { fill: var(--bg); stroke: none; }
+.svcar__outline { fill: none; stroke: var(--border); stroke-width: 2; pointer-events: none; }
+.svcar__zone { fill: var(--surface-2); stroke: var(--bg); stroke-width: 1.5; transition: fill 0.3s var(--ease-out); }
+.svcar__zone.is-active { fill: var(--red); }
+.svcar__hint { font-size: 0.72rem; color: var(--text-dim); text-align: center; max-width: 160px; }
+
+.svpkg__info h4 {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.svpkg__info > p { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 16px; }
+.svpkg__inlabel {
+  font-family: var(--font-head);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+.svpkg__priceRow {
+  display: flex;
+  gap: 24px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.svpkg__priceRow span {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+.svpkg__priceRow b { font-family: var(--font-head); font-size: 1.15rem; font-weight: 800; color: var(--red); }
+.svpkg__info > small { color: var(--text-dim); font-size: 0.76rem; }
+
+.svpkg__addons {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 20px 22px;
+}
+.svpkg__addons h4 {
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+}
+.svpkg__addonsGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+.svpkg__addonsGrid > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+.svpkg__addonsGrid b { color: var(--red); font-family: var(--font-head); white-space: nowrap; }
+
+@media (max-width: 640px) {
+  .svmodal__why { grid-template-columns: 1fr; }
+  .svmodal__badge { width: 96px; margin: 0 auto; }
+  .svmodal__meta { grid-template-columns: 1fr; }
+  .svmodal__meta > div:first-child { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 16px; }
+  .svpkg__grid { grid-template-columns: 1fr; }
+  .svcar svg { max-width: 140px; }
+  .svpkg__addonsGrid { grid-template-columns: 1fr; }
+}
+
 /* ═══════════ REVEAL (stan początkowy dla GSAP) ═══════════ */
 html.js .reveal { opacity: 0; transform: translateY(28px); }
 html.js .reveal.is-inview { opacity: 1; transform: none; }
