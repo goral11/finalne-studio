@@ -1197,6 +1197,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   padding: 20px 24px;
   margin-bottom: 28px;
 }
+.svmodal__meta[hidden] { display: none; }
 .svmodal__meta > div:first-child { border-right: 1px solid var(--border); padding-right: 16px; }
 .svmodal__meta span {
   display: block;
