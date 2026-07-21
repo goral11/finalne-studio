@@ -17,6 +17,6 @@ python3 -m http.server 8437
 # otwórz http://localhost:8437
 ```
 
-## PRZED PUBLIKACJĄ — podmień domenę
-W `index.html`, `robots.txt`, `sitemap.xml` zamień `www.twojadomena.pl`
-na docelowy adres (canonical, og:url, og:image, sitemap).
+## Domena
+Docelowa domena: **luxe-auto-studio.com** (Cloudflare) — ustawiona w
+canonical, og:url, og:image, JSON-LD, robots.txt i sitemap.xml.

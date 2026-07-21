@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.twojadomena.pl/sitemap.xml
+Sitemap: https://luxe-auto-studio.com/sitemap.xml
