@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Edytory
+.vscode/
+.idea/
+*.swp
+
+# Logi / tymczasowe
+*.log
+node_modules/
+.vercel
