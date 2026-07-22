@@ -1388,6 +1388,26 @@ html.js .reveal.is-inview { opacity: 1; transform: none; }
   .nav__cta { display: none; }
 }
 
+.contact__form-note { font-size: 0.78rem; color: var(--text-dim); text-align: center; margin-top: 12px; }
+.contact__form-note a { color: var(--red); text-decoration: underline; }
+
+/* ═══════════ STRONA: POLITYKA PRYWATNOŚCI ═══════════ */
+.legal { padding-top: calc(var(--nav-h) + 60px); }
+.legal .h2 { margin-bottom: 8px; }
+.legal__updated { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 40px; }
+.legal h3 {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 10px;
+}
+.legal p { color: var(--text-dim); margin-bottom: 4px; }
+.legal a { color: var(--red); text-decoration: underline; }
+.legal__back { margin-top: 48px; }
+.legal__back a { color: var(--text); text-decoration: none; }
+.legal__back a:hover { color: var(--red); }
+
 /* ═══════════ REDUCED MOTION ═══════════ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
