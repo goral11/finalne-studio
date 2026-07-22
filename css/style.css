@@ -28,7 +28,7 @@
   --dur: 0.3s;
 
   --container: 1200px;
-  --nav-h: 76px;
+  --nav-h: 92px;
   --radius: 2px;
 }
 
@@ -217,7 +217,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   margin-top: 5px;
 }
 .nav__logo-img {
-  height: 52px;
+  height: 74px;
   width: auto;
 }
 .footer__logo-img {
@@ -534,7 +534,9 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   overflow: hidden;
   transition: transform 0.35s var(--ease-out), border-color 0.35s, background 0.35s, opacity 0.3s;
   will-change: transform;
+  cursor: pointer;
 }
+.scard:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
 .scard::before {                    /* czerwona linia u góry */
   content: "";
   position: absolute;
@@ -545,7 +547,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   transform-origin: left;
   transition: transform 0.4s var(--ease-out);
 }
-.scard:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.2); background: var(--surface-2); }
+.scard:hover { transform: translateY(-6px); border-color: var(--red); background: #201316; }
 .scard:hover::before { transform: scaleX(1); }
 .scard.is-hidden { display: none; }
 
@@ -560,6 +562,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 }
 .scard__icon { width: 34px; height: 34px; color: var(--text-dim); transition: color var(--dur), transform 0.35s var(--ease-out); }
 .scard:hover .scard__icon { color: var(--red); transform: scale(1.12); }
+.scard:hover h3 { color: var(--red); }
 
 .scard h3 {
   font-family: var(--font-head);
@@ -568,6 +571,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   text-transform: uppercase;
   letter-spacing: 0.03em;
   line-height: 1.25;
+  transition: color var(--dur) var(--ease-out);
 }
 .scard p { font-size: 0.95rem; color: var(--text-dim); flex-grow: 1; }
 
@@ -585,16 +589,6 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   color: #fff;
   font-variant-numeric: tabular-nums;
 }
-.scard__foot a {
-  width: 44px; height: 44px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  transition: all var(--dur) var(--ease-out);
-}
-.scard__foot a:hover { background: var(--red); border-color: var(--red); transform: translateX(4px); }
-
 /* ─── Promo: systemy antykradzieżowe ─── */
 .services__promo {
   margin-top: 56px;
@@ -1384,7 +1378,7 @@ html.js .reveal.is-inview { opacity: 1; transform: none; }
   .prow { grid-template-columns: 1fr auto; }
   .prow span:nth-child(2) { display: none; }
   .services__promo { grid-template-columns: 1fr; }
-  .nav__logo-img { height: 44px; }
+  .nav__logo-img { height: 54px; }
   .nav__cta { display: none; }
 }
 

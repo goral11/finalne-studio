@@ -604,6 +604,12 @@ if (svModal) {
       e.preventDefault();
       openServiceModal(a.dataset.service);
     });
+    a.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openServiceModal(a.dataset.service);
+      }
+    });
   });
   svModal.querySelectorAll("[data-svclose]").forEach(el => el.addEventListener("click", closeServiceModal));
   document.addEventListener("keydown", e => {
