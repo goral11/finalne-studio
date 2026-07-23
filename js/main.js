@@ -526,6 +526,111 @@ const SERVICES_DB = {
       { t: "Montaż", d: "Instalacja z ukryciem przewodów i zachowaniem estetyki wnętrza." },
       { t: "Test i konfiguracja", d: "Sprawdzenie działania, konfiguracja ustawień i instruktaż obsługi." }
     ]
+  },
+
+  "regeneracja-kokpitu": {
+    cat: "Renowacja",
+    title: "Regeneracja kokpitu",
+    lead: "Wypłowiała, zmatowiała lub poplamiona deska rozdzielcza i elementy plastikowe tracą estetykę szybciej niż reszta wnętrza. Głębokie czyszczenie i regeneracja przywracają nasycony kolor i fabryczną fakturę plastiku.",
+    badgeTop: "TRWAŁOŚĆ", badgeValue: "12", badgeBottom: "MIES.",
+    benefits: [
+      "Przywrócenie nasyconego, matowego koloru plastiku",
+      "Usunięcie zabrudzeń z trudno dostępnych miejsc i szczelin",
+      "Ochrona przed dalszym blaknięciem pod wpływem słońca",
+      "Naturalny efekt bez tłustego, 'plastikowego' połysku"
+    ],
+    chars: "Zabieg obejmuje głębokie czyszczenie preparatami dedykowanymi do tworzyw sztucznych, usunięcie kurzu i zabrudzeń z rowków oraz nałożenie preparatu regenerująco-ochronnego, który przywraca elastyczność i kolor plastiku.",
+    price: "od 300 zł",
+    duration: "1–3 dni robocze",
+    steps: [
+      { t: "Czyszczenie głębokie", d: "Odkurzenie i czyszczenie deski rozdzielczej, konsoli i listew plastikowych." },
+      { t: "Regeneracja plastiku", d: "Aplikacja preparatu przywracającego kolor i strukturę tworzywa." },
+      { t: "Zabezpieczenie UV", d: "Nałożenie warstwy chroniącej przed promieniowaniem UV i ponownym blaknięciem." }
+    ]
+  },
+
+  "regeneracja-lamp": {
+    cat: "Renowacja",
+    title: "Regeneracja lamp",
+    lead: "Zmatowiałe i pożółkłe klosze reflektorów ograniczają skuteczność świateł nawet o kilkadziesiąt procent i pogarszają wygląd przodu auta. Polerowanie przywraca przejrzystość szkła bez wymiany lampy.",
+    badgeTop: "SKUTECZNOŚĆ", badgeValue: "90", badgeBottom: "%",
+    benefits: [
+      "Przywrócenie pełnej przejrzystości klosza",
+      "Poprawa skuteczności świateł mijania i drogowych",
+      "Odświeżony wygląd przodu auta",
+      "Zabezpieczenie powłoką UV przed ponownym żółknięciem"
+    ],
+    chars: "Polerowanie wieloetapowe usuwa utlenioną, zmatowiałą warstwę poliwęglanu z powierzchni klosza, a następnie zamyka ją przezroczystą powłoką ochronną odporną na promieniowanie UV — główną przyczynę żółknięcia reflektorów.",
+    price: "od 200 zł",
+    duration: "1–3 dni robocze",
+    steps: [
+      { t: "Ocena i oklejenie", d: "Sprawdzenie stopnia zmatowienia i zabezpieczenie okolicznego lakieru taśmą." },
+      { t: "Polerowanie wieloetapowe", d: "Usunięcie zmatowiałej warstwy gradacją past ściernych." },
+      { t: "Powłoka ochronna UV", d: "Zamknięcie efektu powłoką spowalniającą ponowne utlenianie klosza." }
+    ]
+  },
+
+  "regeneracja-szyb": {
+    cat: "Renowacja",
+    title: "Regeneracja szyb czołowych",
+    lead: "Sieć drobnych rys i zmatowień od wycieraczek i piasku ogranicza widoczność, zwłaszcza pod światło. Polerowanie szkła usuwa te niedoskonałości bez wymiany szyby.",
+    badgeTop: "SKUTECZNOŚĆ", badgeValue: "95", badgeBottom: "%",
+    benefits: [
+      "Usunięcie sieci drobnych rys od wycieraczek",
+      "Lepsza widoczność pod światło, zwłaszcza nocą",
+      "Oszczędność względem wymiany całej szyby",
+      "Gładsza powierzchnia — wycieraczki pracują ciszej"
+    ],
+    chars: "Zabieg polega na precyzyjnym polerowaniu szkła pastami na bazie tlenku ceru, które usuwają płytkie rysy i zmatowienia bez ingerencji w wytrzymałość szyby. Głębsze odpryski od kamieni kwalifikują się do osobnej naprawy lub wymiany.",
+    price: "od 400 zł",
+    duration: "1–3 dni robocze",
+    steps: [
+      { t: "Ocena uszkodzeń", d: "Sprawdzenie głębokości rys i kwalifikacji szyby do polerowania." },
+      { t: "Polerowanie szkła", d: "Wieloetapowe polerowanie pastą cerową usuwające zmatowienia i rysy." },
+      { t: "Kontrola i mycie", d: "Sprawdzenie przejrzystości pod różnymi kątami światła i mycie szyby." }
+    ]
+  },
+
+  "przyciemnienie-szyb": {
+    cat: "Ochrona",
+    title: "Przyciemnienie szyb",
+    lead: "Folia przyciemniająca ogranicza nagrzewanie wnętrza nawet o kilkanaście stopni, chroni tapicerkę przed blaknięciem i zapewnia większą prywatność — w stopniu dobranym zgodnie z przepisami.",
+    badgeTop: "BLOKADA UV", badgeValue: "99", badgeBottom: "%",
+    benefits: [
+      "Mniejsze nagrzewanie wnętrza latem",
+      "Ochrona tapicerki i plastików przed blaknięciem",
+      "Blokada do 99% promieniowania UV",
+      "Większa prywatność i jednolity wygląd auta"
+    ],
+    chars: "Folia naklejana jest od wewnętrznej strony szyby metodą na mokro, co pozwala precyzyjnie dopasować ją do krzywizny szkła bez pęcherzy powietrza. Stopień przyciemnienia dobieramy tak, by spełniał obowiązujące przepisy.",
+    price: "od 400 zł",
+    duration: "1–3 dni robocze",
+    steps: [
+      { t: "Dobór stopnia przyciemnienia", d: "Ustalenie odcienia folii zgodnego z oczekiwaniami i przepisami." },
+      { t: "Przygotowanie i aplikacja", d: "Dokładne czyszczenie szyb i naklejenie folii metodą na mokro." },
+      { t: "Docisk i kontrola", d: "Usunięcie pęcherzyków powietrza i kontrola wykończenia krawędzi." }
+    ]
+  },
+
+  "usuwanie-otarc": {
+    cat: "Renowacja",
+    title: "Usuwanie śladów po otarciach",
+    lead: "Zarysowania od krawężników, gałęzi czy ciasnych parkingów psują estetykę auta, choć rzadko wymagają lakierowania całego elementu. Miejscowa naprawa i polerowanie usuwają ślady, zachowując oryginalny lakier w pozostałych miejscach.",
+    badgeTop: "DOŚWIADCZENIE", badgeValue: "7", badgeBottom: "LAT",
+    benefits: [
+      "Naprawa bez lakierowania całego elementu",
+      "Dopasowanie koloru do oryginalnego lakieru",
+      "Skuteczne również przy głębszych otarciach",
+      "Szybszy i tańszy efekt niż pełna naprawa blacharska"
+    ],
+    chars: "Zakres prac zależy od głębokości otarcia — płytkie ślady usuwamy polerowaniem, głębsze wymagają miejscowego wypełnienia i podmalowania dobranym kolorem lakieru. Każdy przypadek wyceniamy indywidualnie po oględzinach auta.",
+    price: "wycena indyw.",
+    duration: "1–3 dni robocze",
+    steps: [
+      { t: "Oględziny i wycena", d: "Ocena głębokości otarcia i dobór metody naprawy." },
+      { t: "Naprawa", d: "Wypełnienie i podmalowanie ubytku lub polerowanie zarysowań." },
+      { t: "Wykończenie", d: "Polerowanie naprawionego miejsca do jednolitego połysku z resztą lakieru." }
+    ]
   }
 };
 
