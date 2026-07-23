@@ -816,6 +816,51 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   background: var(--bg);
 }
 .gitem:hover img { transform: scale(1.06); filter: brightness(0.7); }
+
+.gitem--carousel img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.6s var(--ease-out), filter 0.6s, opacity 0.35s var(--ease-out);
+}
+.gitem--carousel img.is-active { opacity: 1; pointer-events: auto; }
+.gitem__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px; height: 38px;
+  display: grid;
+  place-items: center;
+  background: rgba(8,8,10,0.55);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s, background 0.2s;
+  z-index: 3;
+}
+.gitem:hover .gitem__arrow { opacity: 1; }
+.gitem__arrow:hover { background: var(--red); border-color: var(--red); }
+.gitem__arrow--prev { left: 12px; }
+.gitem__arrow--next { right: 12px; }
+.gitem__dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 3;
+}
+.gitem__dots span {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  transition: background 0.2s, transform 0.2s;
+}
+.gitem__dots span.is-active { background: var(--red); transform: scale(1.3); }
+
 .gitem figcaption {
   position: absolute;
   inset: auto 0 0 0;

@@ -187,6 +187,24 @@ tabs.forEach(tab => tab.addEventListener("click", () => {
   });
 }));
 
+/* ─── KARUZELE W REALIZACJACH ─── */
+document.querySelectorAll(".gitem--carousel").forEach(item => {
+  const slides = [...item.querySelectorAll("img")];
+  const dots = [...item.querySelectorAll(".gitem__dots span")];
+  let idx = slides.findIndex(s => s.classList.contains("is-active"));
+  if (idx < 0) idx = 0;
+  function show(newIdx) {
+    slides[idx].classList.remove("is-active");
+    dots[idx]?.classList.remove("is-active");
+    idx = (newIdx + slides.length) % slides.length;
+    slides[idx].classList.add("is-active");
+    dots[idx]?.classList.add("is-active");
+  }
+  item.querySelector(".gitem__arrow--next")?.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); show(idx + 1); });
+  item.querySelector(".gitem__arrow--prev")?.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); show(idx - 1); });
+  dots.forEach((dot, i) => dot.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); show(i); }));
+});
+
 /* ─── MAGNETIC BUTTONS ─── */
 if (!prefersReduced && matchMedia("(pointer: fine)").matches) {
   document.querySelectorAll(".magnetic").forEach(btn => {
