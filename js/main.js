@@ -281,7 +281,7 @@ const SERVICES_DB = {
     cat: "Ochrona",
     title: "Folie ochronne PPF i zmiany koloru",
     lead: "Folia PPF (Paint Protection Film) to przezroczysta, elastyczna warstwa poliuretanu, która fizycznie chroni lakier przed odpryskami kamieni, rysami i otarciami parkingowymi. Oferujemy też folie zmieniające kolor — nowy wygląd auta bez lakierowania.",
-    badgeTop: "GWARANCJA", badgeValue: "1-10", badgeBottom: "LAT",
+    badgeTop: "GWARANCJA", badgeValue: "10", badgeBottom: "LAT",
     benefits: [
       "Fizyczna ochrona przed odpryskami i zarysowaniami",
       "Samoregeneracja drobnych rys pod wpływem ciepła",
