@@ -1318,6 +1318,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   align-items: start;
   margin-bottom: 24px;
 }
+.svpkg__grid--no-car { grid-template-columns: 1fr; }
+.svpkg__grid--no-car .svcar { display: none; }
 .svcar { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .svcar svg { width: 100%; max-width: 180px; height: auto; }
 .svcar__base { fill: var(--bg); stroke: none; }

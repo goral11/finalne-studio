@@ -452,13 +452,38 @@ const SERVICES_DB = {
       "Usunięcie nieprzyjemnych zapachów u źródła",
       "Powłoki ochronne odporne na plamy"
     ],
-    chars: "Czyszczenie wnętrza obejmuje odkurzanie wszystkich zakamarków, pranie tapicerki materiałowej lub czyszczenie skóry, mycie plastików i szyb od wewnątrz oraz aplikację powłok zabezpieczających przed zabrudzeniami i promieniowaniem UV.",
-    price: "od 400 zł",
-    duration: "pół dnia do 1 dnia",
+    chars: "Czyszczenie wnętrza obejmuje odkurzanie wszystkich zakamarków, pranie tapicerki materiałowej lub czyszczenie skóry, mycie plastików i szyb od wewnątrz oraz aplikację powłok zabezpieczających przed zabrudzeniami i promieniowaniem UV. Demontujemy fotele, jeśli jest to konieczne i bezpieczne, by dotrzeć do każdego zakamarka.",
     steps: [
       { t: "Odkurzanie i wstępne czyszczenie", d: "Dokładne odkurzenie wszystkich powierzchni, foteli, szczelin i bagażnika." },
       { t: "Pranie i czyszczenie", d: "Pranie ekstrakcyjne tapicerki lub czyszczenie skóry oraz mycie plastików i szyb." },
       { t: "Zabezpieczenie", d: "Aplikacja powłok ochronnych na tapicerkę i plastiki, kontrola efektu końcowego." }
+    ],
+    kind: "packages",
+    noDiagram: true,
+    packageOrder: ["CLASSIC", "FULL"],
+    packages: {
+      CLASSIC: {
+        label: "Classic",
+        name: "Detailing Classic",
+        desc: "Podstawowe czyszczenie wnętrza, które przywraca świeżość kabinie. Idealne jako regularna pielęgnacja lub odświeżenie przed ważnym wydarzeniem.",
+        list: ["Odkurzanie całego wnętrza", "Czyszczenie elementów plastikowych", "Mycie szyb od wewnątrz"],
+        price: "100–200 zł",
+        duration: "1–2 godziny",
+        zones: []
+      },
+      FULL: {
+        label: "Full",
+        name: "Detailing Full",
+        desc: "Kompleksowy detailing wnętrza z demontażem foteli i wykładziny. Głębokie czyszczenie każdego zakamarka — jak nowe auto.",
+        list: ["Pranie tapicerki / czyszczenie skór", "Demontaż foteli oraz wykładziny", "Czyszczenie sufitu", "Czyszczenie plastików oraz impregnacja", "Mycie szyb od wewnątrz"],
+        price: "od 650 zł",
+        duration: "8 godzin",
+        zones: []
+      }
+    },
+    addons: [
+      { name: "Pranie tapicerki (osobna usługa)", price: "200–350 zł" },
+      { name: "Zabezpieczenie tapicerki powłoką polimerową", price: "150–250 zł" }
     ]
   },
 
@@ -706,6 +731,7 @@ if (svModal) {
     }
 
     if (isPackages) {
+      document.querySelector("#svPackages .svpkg__grid").classList.toggle("svpkg__grid--no-car", !!s.noDiagram);
       document.getElementById("svPkgTabs").innerHTML = s.packageOrder.map(key =>
         `<button class="svpkg__tab" data-pkg="${key}" role="tab">${s.packages[key].label}</button>`
       ).join("");
