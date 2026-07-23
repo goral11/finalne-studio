@@ -1388,6 +1388,31 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 }
 .svpkg__addonsGrid b { color: var(--red); font-family: var(--font-head); white-space: nowrap; }
 
+.svaddons { display: flex; flex-direction: column; gap: 12px; }
+.svaddon {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.svaddon__name {
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.svaddon__desc { font-size: 0.85rem; color: var(--text-dim); line-height: 1.5; }
+.svaddon__price {
+  color: var(--red);
+  font-family: var(--font-head);
+  font-weight: 800;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 @media (max-width: 640px) {
   .svmodal__why { grid-template-columns: 1fr; }
   .svmodal__badge { width: 96px; margin: 0 auto; }

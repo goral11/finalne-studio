@@ -585,12 +585,16 @@ const SERVICES_DB = {
       { t: "Ocena i oklejenie", d: "Sprawdzenie stopnia zmatowienia i zabezpieczenie okolicznego lakieru taśmą." },
       { t: "Polerowanie wieloetapowe", d: "Usunięcie zmatowiałej warstwy gradacją past ściernych." },
       { t: "Powłoka ochronna UV", d: "Zamknięcie efektu powłoką spowalniającą ponowne utlenianie klosza." }
+    ],
+    addons: [
+      { name: "Zabezpieczenie powłoką", desc: "Warstwa ceramiczna chroniąca klosz przed ponownym zmatowieniem i żółknięciem, ułatwiająca też mycie reflektora.", price: "od 200 zł" },
+      { name: "Folia przezroczysta PPF", desc: "Grubsza, najtrwalsza ochrona reflektora — fizyczna warstwa chroniąca przed odpryskami kamieni i otarciami.", price: "500 zł" }
     ]
   },
 
   "regeneracja-szyb": {
     cat: "Renowacja",
-    title: "Regeneracja szyb czołowych",
+    title: "Regeneracja szyb",
     lead: "Sieć drobnych rys i zmatowień od wycieraczek i piasku ogranicza widoczność, zwłaszcza pod światło. Polerowanie szkła usuwa te niedoskonałości bez wymiany szyby.",
     badgeTop: "SKUTECZNOŚĆ", badgeValue: "95", badgeBottom: "%",
     benefits: [
@@ -600,7 +604,7 @@ const SERVICES_DB = {
       "Gładsza powierzchnia — wycieraczki pracują ciszej"
     ],
     chars: "Zabieg polega na precyzyjnym polerowaniu szkła pastami na bazie tlenku ceru, które usuwają płytkie rysy i zmatowienia bez ingerencji w wytrzymałość szyby. Głębsze odpryski od kamieni kwalifikują się do osobnej naprawy lub wymiany.",
-    price: "od 400 zł",
+    price: "od 200 zł",
     duration: "1–3 dni robocze",
     steps: [
       { t: "Ocena uszkodzeń", d: "Sprawdzenie głębokości rys i kwalifikacji szyby do polerowania." },
@@ -690,6 +694,16 @@ if (svModal) {
     const isPackages = s.kind === "packages";
     document.getElementById("svMeta").hidden = isPackages;
     document.getElementById("svPackages").hidden = !isPackages;
+
+    const addonsBlock = document.getElementById("svAddonsBlock");
+    if (!isPackages && s.addons) {
+      addonsBlock.hidden = false;
+      document.getElementById("svAddonsList").innerHTML = s.addons.map(a =>
+        `<div class="svaddon"><div><div class="svaddon__name">${a.name}</div><div class="svaddon__desc">${a.desc}</div></div><b class="svaddon__price">${a.price}</b></div>`
+      ).join("");
+    } else {
+      addonsBlock.hidden = true;
+    }
 
     if (isPackages) {
       document.getElementById("svPkgTabs").innerHTML = s.packageOrder.map(key =>
