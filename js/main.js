@@ -241,7 +241,7 @@ const SERVICES_DB = {
     cat: "Ochrona",
     title: "Powłoka ceramiczna",
     lead: "Powłoka ceramiczna SiO₂ trwale wiąże się z lakierem, tworząc twardą, przezroczystą warstwę ochronną. To rozwiązanie dla kierowców, którzy chcą, by auto wyglądało jak prosto z myjni przez lata, a nie tygodnie.",
-    badgeTop: "GWARANCJA", badgeValue: "2", badgeBottom: "LATA",
+    badgeTop: "GWARANCJA", badgeValue: "1-10", badgeBottom: "LAT",
     benefits: [
       "Głęboki, mokry połysk utrzymujący się do 2–3 lat",
       "Efekt hydrofobowy — brud i woda spływają same",
@@ -250,8 +250,8 @@ const SERVICES_DB = {
       "Łatwiejsze i szybsze mycie na co dzień"
     ],
     chars: "Powłoka na bazie dwutlenku krzemu (SiO₂) po utwardzeniu tworzy warstwę o twardości zbliżonej do szkła, całkowicie przezroczystą i niewidoczną na lakierze. W przeciwieństwie do wosku nie zmywa się — wiąże się chemicznie z powierzchnią lakieru. Przed aplikacją lakier jest dokładnie dekontaminowany, a w razie potrzeby poddawany korekcie, by powłoka nie zamknęła w sobie żadnych zabrudzeń ani rys.",
-    price: "od 2000 zł",
-    duration: "1–2 dni robocze",
+    price: "od 1500 zł",
+    duration: "2–3 dni robocze",
     steps: [
       { t: "Mycie i dekontaminacja", d: "Dokładne mycie dwuetapowe, usunięcie zanieczyszczeń mineralnych i odtłuszczenie lakieru przed aplikacją." },
       { t: "Aplikacja powłoki", d: "Nakładanie warstw powłoki w kontrolowanych warunkach studia, bez kurzu i wilgoci." },
@@ -279,19 +279,19 @@ const SERVICES_DB = {
         label: "BASIC",
         name: "Pakiet BASIC",
         desc: "Ochrona najbardziej narażonych elementów: przedni zderzak, krawędź maski, reflektory, lusterka i wnęki klamek.",
-        list: ["Przedni zderzak", "Krawędź maski (ok. 30 cm)", "Reflektory i lusterka", "Wnęki klamek przednich drzwi"],
+        list: ["Przedni zderzak", "Krawędź maski (ok. 30 cm)", "Reflektory i lusterka", "Wnęki klamek przód i tył"],
         price: "od 3000 zł",
         duration: "2–3 dni robocze",
-        zones: ["bumperFront", "headlightL", "headlightR", "hoodEdge", "mirrorL", "mirrorR", "handleFL", "handleFR"]
+        zones: ["bumperFront", "headlightL", "headlightR", "hoodEdge", "mirrorL", "mirrorR", "handleFL", "handleFR", "handleRL", "handleRR"]
       },
       FULL_FRONT: {
         label: "Full Front",
         name: "Pakiet Full Front",
         desc: "Pełna ochrona przodu auta: cała maska, błotniki przednie, zderzak, reflektory i lusterka.",
-        list: ["Przedni zderzak", "Cała maska", "Błotniki przednie", "Reflektory i lusterka", "Wnęki klamek przednich drzwi"],
+        list: ["Przedni zderzak", "Cała maska", "Błotniki przednie", "Reflektory i lusterka", "Wnęki klamek przód i tył"],
         price: "od 4000 zł",
         duration: "3–4 dni robocze",
-        zones: ["bumperFront", "headlightL", "headlightR", "hoodEdge", "hoodRest", "fenderFL", "fenderFR", "mirrorL", "mirrorR", "handleFL", "handleFR"]
+        zones: ["bumperFront", "headlightL", "headlightR", "hoodEdge", "hoodRest", "fenderFL", "fenderFR", "mirrorL", "mirrorR", "handleFL", "handleFR", "handleRL", "handleRR"]
       },
       FULL_BODY: {
         label: "Full Body",
@@ -331,7 +331,7 @@ const SERVICES_DB = {
     ],
     chars: "Powłoka ceramiczna do felg wytrzymuje temperatury generowane przez układ hamulcowy oraz agresywne działanie soli drogowej. Dzięki niej pył hamulcowy nie przywiera trwale do powierzchni i łatwo się go zmywa podczas zwykłego mycia auta.",
     price: "od 400 zł",
-    duration: "kilka godzin",
+    duration: "1 dzień",
     steps: [
       { t: "Mycie i dekontaminacja felg", d: "Dokładne odtłuszczenie i usunięcie osadu hamulcowego z całej powierzchni felgi." },
       { t: "Aplikacja powłoki", d: "Nałożenie powłoki na każdą felgę osobno, warstwa po warstwie." },
@@ -352,7 +352,7 @@ const SERVICES_DB = {
     ],
     chars: "Powłoka hydrofobowa wnika w mikropory szkła, zwiększając kąt spływu wody. Krople formują się w kulki i są zdmuchiwane z szyby przez strumień powietrza już przy prędkości ok. 60–70 km/h, co w praktyce ogranicza potrzebę używania wycieraczek.",
     price: "od 200 zł",
-    duration: "ok. 1 godzina",
+    duration: "1 dzień",
     steps: [
       { t: "Oczyszczenie szyby", d: "Dokładne odtłuszczenie i polerowanie szkła przed aplikacją, usunięcie starych powłok." },
       { t: "Aplikacja powłoki", d: "Nałożenie preparatu hydrofobowego na szybę czołową (opcjonalnie także boczne i lusterka)." },
@@ -394,7 +394,7 @@ const SERVICES_DB = {
     ],
     chars: "Renowacja obejmuje głębokie czyszczenie, ewentualną naprawę przetarć oraz barwienie skóry pigmentami dobranymi do oryginalnego koloru producenta. Na koniec nakładana jest warstwa ochronna, która zamyka kolor i ułatwia dalszą pielęgnację.",
     price: "od 250 zł",
-    duration: "3–5 godzin",
+    duration: "1 dzień",
     steps: [
       { t: "Czyszczenie głębokie", d: "Usunięcie brudu, tłuszczu i starych powłok z porów skóry przed dalszą pracą." },
       { t: "Naprawa i barwienie", d: "Wypełnienie przetarć, dobór i aplikacja pigmentu w kolorze oryginalnym dla danego modelu." },
@@ -425,7 +425,7 @@ const SERVICES_DB = {
 
   "detailing-wnetrza": {
     cat: "Pielęgnacja",
-    title: "Detailing wnętrza",
+    title: "Full detailing wnętrza",
     lead: "Kompleksowe czyszczenie tapicerki, plastików i dywaników oraz zabezpieczenie ich trwałymi, niewidocznymi powłokami ochronnymi — wnętrze czyste i pachnące jak w nowym aucie.",
     badgeTop: "DOŚWIADCZENIE", badgeValue: "7", badgeBottom: "LAT",
     benefits: [
